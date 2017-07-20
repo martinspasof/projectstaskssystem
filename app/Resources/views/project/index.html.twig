@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="page-header">Projects</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for project in projects_json_decode.projects %}
+            <tr>
+                <th scope="row">{{ project.id }}</th>
+                <td>{{ project.projectName }}</td>
+                <td>{{ project.description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

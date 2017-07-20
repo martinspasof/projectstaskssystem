@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a class="btn btn-default" href="/">Back To Tasks</a>
+    <hr>
+    <h2 class="page-header">{{ task.taskName }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item">Project Name: {{ task.project.projectName }}</li>
+        <li class="list-group-item">Due Date: <strong>{{ task.dueDate|date('F j, Y, g:i a') }}</strong></li>
+        <li class="list-group-item">Status: {{ task.status }}</li>
+    </ul>
+    <p>
+        {{ task.description }}
+    </p>
+{% endblock %}
